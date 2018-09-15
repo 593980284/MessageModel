@@ -116,19 +116,14 @@
 		124918AB214D57E4006F5A87 /* MessageModel */ = {
 			isa = PBXGroup;
 			children = (
+				124918F0214D6B8D006F5A87 /* 分类 */,
+				124918EF214D6B64006F5A87 /* 登录界面 */,
+				124918EE214D6B49006F5A87 /* 网络请求 */,
 				124918DE214D583B006F5A87 /* MessageModel */,
 				124918AC214D57E4006F5A87 /* AppDelegate.h */,
 				124918AD214D57E4006F5A87 /* AppDelegate.m */,
 				124918AF214D57E4006F5A87 /* ViewController.h */,
 				124918B0214D57E4006F5A87 /* ViewController.m */,
-				124918E2214D5880006F5A87 /* NetWorkTool.h */,
-				124918E3214D5880006F5A87 /* NetWorkTool.m */,
-				124918E5214D5932006F5A87 /* LoginViewController.h */,
-				124918E6214D5932006F5A87 /* LoginViewController.m */,
-				124918E8214D5B83006F5A87 /* NSObject+HCCategory.h */,
-				124918EB214D5B84006F5A87 /* NSObject+HCCategory.m */,
-				124918EA214D5B83006F5A87 /* UIViewController+HCCategory.h */,
-				124918E9214D5B83006F5A87 /* UIViewController+HCCategory.m */,
 				124918B2214D57E5006F5A87 /* Main.storyboard */,
 				124918B5214D57E5006F5A87 /* Assets.xcassets */,
 				124918B7214D57E5006F5A87 /* LaunchScreen.storyboard */,
@@ -163,6 +158,35 @@
 				124918E0214D584D006F5A87 /* MessageModel.m */,
 			);
 			path = MessageModel;
+			sourceTree = "<group>";
+		};
+		124918EE214D6B49006F5A87 /* 网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				124918E2214D5880006F5A87 /* NetWorkTool.h */,
+				124918E3214D5880006F5A87 /* NetWorkTool.m */,
+			);
+			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		124918EF214D6B64006F5A87 /* 登录界面 */ = {
+			isa = PBXGroup;
+			children = (
+				124918E5214D5932006F5A87 /* LoginViewController.h */,
+				124918E6214D5932006F5A87 /* LoginViewController.m */,
+			);
+			path = "登录界面";
+			sourceTree = "<group>";
+		};
+		124918F0214D6B8D006F5A87 /* 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				124918E8214D5B83006F5A87 /* NSObject+HCCategory.h */,
+				124918EB214D5B84006F5A87 /* NSObject+HCCategory.m */,
+				124918EA214D5B83006F5A87 /* UIViewController+HCCategory.h */,
+				124918E9214D5B83006F5A87 /* UIViewController+HCCategory.m */,
+			);
+			path = "分类";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

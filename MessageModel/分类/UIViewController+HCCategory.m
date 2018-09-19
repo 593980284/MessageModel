@@ -13,7 +13,7 @@
 @implementation UIViewController (HCCategory)
 
 - (UIViewController *)gk_visibleViewControllerIfExist {
-    NSLog(@"--%@",self);
+    //NSLog(@"--%@",self);
     if (self.presentedViewController) {
         return [self.presentedViewController gk_visibleViewControllerIfExist];
     }
@@ -26,12 +26,14 @@
         return [((UITabBarController *)self).selectedViewController gk_visibleViewControllerIfExist];
     }
     
-    if ([self isViewLoaded] && self.view.window) {
-        return self;
-    }else {
-        NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
-        return nil;
-    }
+    return self;
+    
+//    if ([self isViewLoaded] && self.view.window) {
+//        return self;
+//    }else {
+//        NSLog(@"找不到可见的控制器，viewcontroller.self = %@, self.view.window = %@", self, self.view.window);
+//        return nil;
+//    }
 }
 
 @end

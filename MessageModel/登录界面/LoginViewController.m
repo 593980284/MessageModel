@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "HCMessageManager.h"
 @interface LoginViewController ()
 
 @end
@@ -29,9 +29,14 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"登录成功");
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogin"];
     [self dismissViewControllerAnimated:YES completion:nil];
-    [_messageModel msgSend];
+    [[HCMessageManager share] sendAllMsg];
+}
+
+- (void)dealloc
+{
+     NSLog(@"%p",self);
+    [[HCMessageManager share] removeAll];
 }
 
 - (void)didReceiveMemoryWarning {

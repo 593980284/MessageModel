@@ -31,6 +31,7 @@
         va_end(args);
         _inv = inv;
         _sig = sig;
+        _target = target;
     }
     return self;
 }
@@ -284,5 +285,22 @@ struct dummy arg = va_arg(args, struct dummy); \
             
         }
     }
+}
+@end
+
+
+@implementation MessageModel (HCNetLoadingViewManager)
+
+- (void)setTag:(NSInteger)tag
+{
+    objc_setAssociatedObject(self, @selector(tag), [NSNumber numberWithInteger:tag], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSInteger)tag{
+    NSNumber *tag = objc_getAssociatedObject(self, _cmd);
+    if (tag) {
+        return tag.integerValue;
+    }
+    return 0;
 }
 @end

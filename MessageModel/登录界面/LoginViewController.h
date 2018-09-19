@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MessageModel.h"
+
 @interface LoginViewController : UIViewController
-@property(nonatomic, strong)MessageModel *messageModel;
+
+
 @end

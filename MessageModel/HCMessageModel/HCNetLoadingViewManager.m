@@ -48,7 +48,7 @@ static HCNetLoadingViewManager * _manager = nil;
 - (void)closeLoadingWithTag:(NSInteger )tag
 {
     if (_queue.count) {
-        NSLog(@"%ld",_queue[0].tag);
+       // NSLog(@"%ld",_queue[0].tag);
         if (_queue[0].tag == tag) {
             [self closeLoadingViewWithTag:tag];
             [_queue removeObjectAtIndex:0];

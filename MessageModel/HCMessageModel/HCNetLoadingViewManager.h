@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface HCNetLoadingViewManager : NSObject
 
@@ -28,4 +29,8 @@
  @param tag LoadingView的tag值
  */
 - (void)closeLoadingWithTag:(NSInteger )tag;
+
+
+@property(nonatomic, strong)UIView *myWindow;
+
 @end

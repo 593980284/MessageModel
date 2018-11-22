@@ -9,6 +9,7 @@
 #import "HCNetLoadingViewManager.h"
 #import "MessageModel.h"
 //#import "AppDelegate.h"
+@class AppDelegate;
 static HCNetLoadingViewManager * _manager = nil;
 @interface HCNetLoadingViewManager ()
 @property(nonatomic, strong)NSMutableArray<MessageModel *> *queue;
@@ -69,30 +70,28 @@ static HCNetLoadingViewManager * _manager = nil;
 ///根据tag生成loadingView，添加的window
 - (void)creatLoadingViewWithMsg:(NSString *)msg tag:(NSInteger) tag
 {
-//    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    UIWindow *window = delegate.window;
-//
-//    UIView *loadingView = [UIView new];
-//    loadingView.tag = tag;
-//    loadingView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.3];
-//    loadingView.frame = window.bounds;
-//
-//    UILabel *titleLb = [UILabel new];
-//    titleLb.text = msg;
-//    [loadingView addSubview:titleLb];
-//    [titleLb sizeToFit];
-//    titleLb.center = window.center;
-//
-//    [window addSubview:loadingView];
+    UIView *window = self.myWindow;
+
+    UIView *loadingView = [UIView new];
+    loadingView.tag = tag;
+    loadingView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.3];
+    loadingView.frame = window.bounds;
+
+    UILabel *titleLb = [UILabel new];
+    titleLb.text = msg;
+    [loadingView addSubview:titleLb];
+    [titleLb sizeToFit];
+    titleLb.center = window.center;
+
+    [window addSubview:loadingView];
 }
 
 ///根据tag，在window中移除LoadingView
 - (void)closeLoadingViewWithTag:(NSInteger)tag{
-//    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    UIWindow *window = delegate.window;
-//    UIView *loadingView = [window viewWithTag:tag];
-//    if (loadingView) {
-//        [loadingView removeFromSuperview];
-//    }
+    UIView *window = self.myWindow;
+    UIView *loadingView = [window viewWithTag:tag];
+    if (loadingView) {
+        [loadingView removeFromSuperview];
+    }
 }
 @end
